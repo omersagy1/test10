@@ -1,3 +1,11 @@
+:root {
+  --base-color: #E4F9FF;
+  --secondary-color: #A5D4FF;
+  --highlight-color: #C4FFBB;
+  --text-color: #3A268B;
+  --border-color: #E4E4E4;
+}
+
 .tx {
-  color: red;
+  color: var(--base-color);
 }
