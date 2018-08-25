@@ -21,5 +21,5 @@ type Product = Mezuzah
 
 
 type alias HomePage =
-  { highlightedPhoto : Product
+  { highlightedPhoto : Maybe Product
   }

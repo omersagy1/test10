@@ -1,4 +1,6 @@
 module Message exposing (..)
 
+import Model exposing (..)
 
-type Message = Buy
+
+type Message = Navigate Page
