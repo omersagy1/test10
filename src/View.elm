@@ -6,6 +6,7 @@ import Html.Attributes exposing (class)
 
 import Model exposing (..)
 import Message exposing (Message)
+import HomePage
 
 
 view : Model -> Document Message
@@ -20,14 +21,7 @@ body model =
   case model.currentPage of
 
     Home page -> 
-      homePage page
+      HomePage.homePage page
 
     other -> 
       div [] [text "page not implemented!"]
-
-
-homePage : HomePage -> Html Message
-homePage pageModel =
-  div [ class "tx" ] 
-      [ text "hello world"
-      ]
