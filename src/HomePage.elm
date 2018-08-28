@@ -23,6 +23,7 @@ homePage : HomePage -> Html Message
 homePage pageModel =
   div [ class "homepage" ] 
       [ sideBar pageModel.highlightedPhoto
+      , mainBody pageModel.highlightedPhoto
       ]
 
 
@@ -36,3 +37,10 @@ navButton : String -> Html Message
 navButton label =
   div [ class "nav-button" ] 
       [ text label ]
+
+
+mainBody : Maybe Product -> Html Message
+mainBody highlightedPhoto =
+  div [ class "main-body" ]
+      [ div [ class "main-title" ] [ text "Gila Sagy Fused Glass Art" ]
+      ]
