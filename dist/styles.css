@@ -16,6 +16,7 @@ html, body {
 .homepage {
   height: 100%;
   display: flex;
+  background-color: var(--base-color);
 }
 
 .sidebar {
@@ -28,7 +29,7 @@ html, body {
   flex-direction: column;
   align-items: center;
 
-  box-shadow: 2px 0px 10px #00000080
+  box-shadow: 2px 0px 10px #00000080;
 }
 
 .nav-button {
@@ -51,15 +52,40 @@ html, body {
 }
 
 .main-body {
-  background-color: var(--base-color);
   flex: 1;
 
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .main-title {
   margin: 20px;
   font-size: 36px;
   font-family: "zapfino";
+  color: var(--text-color);
+}
+
+.bio {
+  display: flex;
+  flex-direction: row;
+}
+
+.artist-image-frame {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.artist-image {
+  width: 150px;
+  height: auto;
+  border-style: solid;
+  border-width: 8px;
+  border-color: var(--secondary-color);
+}
+
+.blurb {
+  font-size: 24px;
+  font-family: var(--base-font);
+  color: var(--text-color);
 }

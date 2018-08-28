@@ -1,7 +1,7 @@
 module HomePage exposing (..)
 
-import Html exposing (Html, div, text)
-import Html.Attributes exposing (class)
+import Html exposing (Html, div, text, img)
+import Html.Attributes exposing (class, src)
 
 import Model exposing (..)
 import Message exposing (Message)
@@ -43,4 +43,19 @@ mainBody : Maybe Product -> Html Message
 mainBody highlightedPhoto =
   div [ class "main-body" ]
       [ div [ class "main-title" ] [ text "Gila Sagy Fused Glass Art" ]
+      , bio
+      ]
+
+
+bio : Html a
+bio =
+  div [ class "bio" ]
+      [ div [ class "artist-image-frame" ]
+            [ img [ class "artist-image", src "artist.jpeg" ] [] ]
+      , blurb
+      ]
+
+blurb =
+  div [ class "blurb" ]
+      [ text "One-of-a-kind hand-made glass pieces, from Mezuzot to Necklaces, Earrings, and Photo Holders. Each piece is carefully crafted by Gila Sagy in her California studio. Please browse, enjoy, and contact us to place a custom order, or visit our online Etsy store."
       ]
