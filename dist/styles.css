@@ -1,11 +1,13 @@
 :root {
   --base-color: #FFFFFF;
-  --secondary-color: #408080;
+  --secondary-color: #93c7c7;
+  --tertiary-color: rgb(253, 245, 227);
   --highlight-color: #C4FFBB;
-  --text-color: ;
+  --text-color: rgb(0, 61, 28);
   --border-color: #E4E4E4;
   
   --base-font: "Cochin";
+  --title-font: "Cochin";
 }
 
 html, body {
@@ -33,7 +35,7 @@ html, body {
 }
 
 .nav-button {
-  background-color: var(--base-color);
+  background-color: var(--tertiary-color);
   color: var(--text-color);
   font-family: var(--base-font);
   width: 140px;
@@ -45,9 +47,9 @@ html, body {
   align-items: center;
 
   border-style: solid;
-  border-color: #979797;
-  border-width: 2px;
-  border-radius: 10px;
+  border-color: var(--border-color);
+  border-width: 1px;
+  border-radius: 5px;
   box-shadow: 0px 2px 4px #00000080;
 }
 
@@ -56,8 +58,9 @@ html, body {
 
 .main-title {
   margin: 20px;
-  font-size: 30px;
-  font-family: "zapfino";
+  margin-bottom: 40px;
+  font-size: 60px;
+  font-family: var(--title-font);
   color: var(--text-color);
   text-align: center;
 }
@@ -105,6 +108,8 @@ html, body {
   border-style: solid;
   border-color: var(--secondary-color);
   border-width: 10px;
+
+  box-shadow: 0px 2px 4px #00000080;
 }
 
 .photo-holders {
@@ -117,10 +122,13 @@ html, body {
   border-style: solid;
   border-color: var(--secondary-color);
   border-width: 10px;
+
+  box-shadow: 0px 2px 4px #00000080;
 }
 
 .product-title {
   text-align: center;
+  color: var(--text-color);
   font-family: var(--base-font);
   margin-bottom: 5px;
 }
