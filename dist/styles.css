@@ -1,8 +1,8 @@
 :root {
-  --base-color: #E4F9FF;
-  --secondary-color: #A5D4FF;
+  --base-color: #FFFFFF;
+  --secondary-color: #408080;
   --highlight-color: #C4FFBB;
-  --text-color: #3A268B;
+  --text-color: ;
   --border-color: #E4E4E4;
   
   --base-font: "Cochin";
@@ -52,40 +52,75 @@ html, body {
 }
 
 .main-body {
-  flex: 1;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 .main-title {
   margin: 20px;
-  font-size: 36px;
+  font-size: 30px;
   font-family: "zapfino";
   color: var(--text-color);
+  text-align: center;
 }
 
 .bio {
   display: flex;
   flex-direction: row;
+  margin-left: 50px;
+  margin-right: 50px;
 }
 
 .artist-image-frame {
-  margin-left: 20px;
   margin-right: 20px;
 }
 
 .artist-image {
-  width: 150px;
+  display: block;
+  width: 130px;
   height: auto;
-  border-style: solid;
-  border-width: 8px;
-  border-color: var(--secondary-color);
+  box-shadow: 0px 2px 4px #00000080;
 }
 
 .blurb {
-  font-size: 24px;
+  font-size: 22px;
   font-family: var(--base-font);
   color: var(--text-color);
+}
+
+.product-categories {
+  margin-top: 30px;
+  margin-left: 50px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.product-category {
+  margin-right: 50px;
+}
+
+.category-image {
+  height: 300px;
+
+  border-style: solid;
+  border-color: var(--secondary-color);
+  border-width: 10px;
+}
+
+.photo-holders {
+  height: 300px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  border-style: solid;
+  border-color: var(--secondary-color);
+  border-width: 10px;
+}
+
+.product-title {
+  text-align: center;
+  font-family: var(--base-font);
+  margin-bottom: 5px;
 }
