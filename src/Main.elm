@@ -53,11 +53,27 @@ updateModel message model =
 
     (Message.Navigate page, _) -> 
       model
+    
+    (Message.HighlightNavButton page, _) ->
+      { model | sideBar = highlightNavButton page model.sideBar }
+    
+    (Message.ClearNavHighlight, _) ->
+      { model | sideBar = clearNavHighlight model.sideBar }
 
     (Message.Home homeMessage, Home) -> 
       { model | home = updateHomePage homeMessage model.home }
 
     (_, _) -> model
+
+
+highlightNavButton : Page -> SideBar -> SideBar
+highlightNavButton page sideBar =
+  { sideBar | highlightedPage = Just page }
+
+
+clearNavHighlight : SideBar -> SideBar
+clearNavHighlight sideBar =
+  { sideBar | highlightedPage = Nothing }
 
 
 updateHomePage : HomeMessage -> HomePage -> HomePage
