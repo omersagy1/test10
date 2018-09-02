@@ -7,8 +7,6 @@ import Asset exposing (imagesrc)
 import Model exposing (..)
 import Message exposing (Message)
 
-import View.SideBar exposing (sideBar)
-
 
 homePage : HomePage -> Html Message
 homePage pageModel =
