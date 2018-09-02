@@ -2,22 +2,30 @@ module Model exposing (..)
 
 
 type alias Model = 
-  { currentPage : Page
+  { currentPage: Page
+  , home: HomePage
+  , sideBar: SideBar
   }
 
 
-type Page = Home HomePage
+type alias SideBar =
+  { buttons: List Page
+  , highlightedPage: Maybe Page
+  }
+
+
+type Page = Home
             | Etsy
-            | ProductPage Product
+            | Product Product
             | Shows
             | About
             | Contact
 
 
-type Product = Mezuzah
+type Product = Mezuzot
                | Jewelry
-               | PhotoHolder
-               | Bottle
+               | PhotoHolders
+               | Bottles
 
 
 type alias HomePage =

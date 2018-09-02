@@ -1,4 +1,4 @@
-module HomePage exposing (..)
+module View.HomePage exposing (..)
 
 import Html exposing (Html, div, text, img)
 import Html.Attributes exposing (class, src)
@@ -7,37 +7,13 @@ import Asset exposing (imagesrc)
 import Model exposing (..)
 import Message exposing (Message)
 
-
-buttonNames =
-  [ "Etsy Store"
-  , "Mezuzot"
-  , "Jewelry"
-  , "Photo Holders"
-  , "Wine Bottles"
-  , "Shows & Fairs"
-  , "About Gila"
-  , "Contact Us"
-  ]
+import View.SideBar exposing (sideBar)
 
 
 homePage : HomePage -> Html Message
 homePage pageModel =
   div [ class "homepage" ] 
-      [ sideBar pageModel.highlightedPhoto
-      , mainBody pageModel.highlightedPhoto
-      ]
-
-
-sideBar : Maybe Product -> Html Message
-sideBar highlightedProduct =
-  div [ class "sidebar" ] 
-      (List.map navButton buttonNames)
-
-
-navButton : String -> Html Message
-navButton label =
-  div [ class "nav-button" ] 
-      [ text label ]
+      [ mainBody pageModel.highlightedPhoto ]
 
 
 mainBody : Maybe Product -> Html Message
