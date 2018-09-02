@@ -7,6 +7,8 @@ import Asset exposing (imagesrc)
 import Model exposing (..)
 import Message exposing (Message)
 
+import View.Text as Text
+
 
 homePage : HomePage -> Html Message
 homePage pageModel =
@@ -34,7 +36,7 @@ bio =
 
 blurb =
   div [ class "blurb" ]
-      [ text "One-of-a-kind hand-made glass pieces, from Mezuzot to Necklaces, Earrings, and Photo Holders. Each piece is carefully crafted by Gila Sagy in her California studio. Please browse, enjoy, and contact us to place a custom order, or visit our online Etsy store."
+      [ text Text.artistBlurb
       ]
 
 

@@ -70,6 +70,8 @@ html, body {
   border-width: 1px;
   border-radius: 5px;
   box-shadow: 0px 2px 4px #00000080;
+
+  cursor: pointer;
 }
 
 .main-body {
