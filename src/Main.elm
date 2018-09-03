@@ -1,50 +1,64 @@
 module Main exposing (..)
 
-import Browser
+import Browser exposing (UrlRequest)
+import Browser.Navigation as Nav
 import Maybe exposing (..)
 import Platform.Cmd as Cmd exposing (Cmd)
+import Url exposing (Url)
 
 import Model exposing (..)
 import Message exposing (Message, HomeMessage)
 import View.View as View
 
 
-initialModel =
-  { currentPage = Home
-  , home =
-    { highlightedPhoto = Nothing
-    }
-  , sideBar =
-    { buttons =
-      [ Home
-      , Etsy
-      , Product Mezuzot
-      , Product Jewelry
-      , Product PhotoHolders
-      , Product Bottles
-      , Shows
-      , About
-      , Contact
-      ]
-    , highlightedPage = Nothing
-    }
-  }
-
-
-main = Browser.document
+main = Browser.application
   { init = init
-  , subscriptions = (\_ -> Sub.none)
-  , update = update
   , view = View.view
+  , update = update
+  , subscriptions = (\_ -> Sub.none)
+  , onUrlRequest = onUrlRequest
+  , onUrlChange = onUrlChange
   }
 
 
-init : () -> (Model, Cmd Message)
-init _ = (initialModel, Cmd.none)
+init : () -> Url -> Nav.Key -> (Model, Cmd Message)
+init flags url key = 
+  let 
+    initialModel =
+      { key = key
+      , currentPage = Home
+      , home =
+        { highlightedPhoto = Nothing
+        }
+      , sideBar =
+        { buttons =
+          [ Home
+          , Etsy
+          , Product Mezuzot
+          , Product Jewelry
+          , Product PhotoHolders
+          , Product Bottles
+          , Shows
+          , About
+          , Contact
+          ]
+        , highlightedPage = Nothing
+        }
+      }
+  in
+    (initialModel, Cmd.none)
 
 
 update : Message -> Model -> (Model, Cmd Message)
 update message model = (updateModel message model, Cmd.none)
+
+
+onUrlRequest : UrlRequest -> Message
+onUrlRequest urlRequest = Message.Navigate Home
+
+
+onUrlChange : Url -> Message
+onUrlChange url = Message.Navigate Home
 
 
 updateModel : Message -> Model -> Model

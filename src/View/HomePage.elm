@@ -54,14 +54,15 @@ productCategory : String -> String -> Html Message
 productCategory name imgFile =
   div [ class "product-category" ]
       [ productTitle name
-      , img [ class "category-image", imagesrc imgFile ] []
+      , div [ class "product-image-frame" ]
+            [ img [ class "category-image", imagesrc imgFile ] [] ]
       ]
 
 photoHolders : Html Message
 photoHolders = 
   div [ class "product-category" ]
       [ productTitle "Photo Holders"
-      , div [ class "photo-holders" ] 
+      , div [ class "photo-holders-frame" ] 
         [ img [ class "photo-holder", imagesrc "holder_page_1" ] []
         , img [ class "photo-holder", imagesrc "holder_page_2" ] []
         , img [ class "photo-holder", imagesrc "holder_page_3" ] []

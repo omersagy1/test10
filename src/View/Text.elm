@@ -1,5 +1,6 @@
 module View.Text exposing (..)
 
+
 artistBlurb : String
 artistBlurb = 
   """

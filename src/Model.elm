@@ -1,10 +1,13 @@
 module Model exposing (..)
 
+import Browser.Navigation as Nav
+
 
 type alias Model = 
-  { currentPage: Page
-  , home: HomePage
-  , sideBar: SideBar
+  { key : Nav.Key
+  , currentPage : Page
+  , home : HomePage
+  , sideBar : SideBar
   }
 
 
