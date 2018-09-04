@@ -86,15 +86,6 @@ urlChanged url model =
     update (Message.Navigate page) model
 
 
-pathForPage : Page -> String
-pathForPage page =
-  case page of
-    Home -> "home"
-    Product Mezuzot -> "mezuzot"
-    Product Jewelry -> "jewelry"
-    other -> "home"
-
-
 routeParser : Parser (Page -> a) a
 routeParser =
   oneOf

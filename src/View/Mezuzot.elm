@@ -5,4 +5,4 @@ import Html.Attributes exposing (class, src)
 
 
 mezuzotPage : Html a
-mezuzotPage = text "placeholder"
+mezuzotPage = div [] [ text "placeholder" ]

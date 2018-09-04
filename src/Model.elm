@@ -28,3 +28,11 @@ type Product = Mezuzot
                | PhotoHolders
                | Bottles
 
+
+pathForPage : Page -> String
+pathForPage page =
+  case page of
+    Home -> "home"
+    Product Mezuzot -> "mezuzot"
+    Product Jewelry -> "jewelry"
+    other -> "home"

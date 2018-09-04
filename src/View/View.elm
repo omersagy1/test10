@@ -1,13 +1,14 @@
 module View.View exposing (view)
 
 import Browser exposing (Document)
-import Html exposing (Html, div, text)
-import Html.Attributes exposing (class)
+import Html exposing (Html, div, text, a)
+import Html.Attributes exposing (class, href)
 import Html.Events exposing (onMouseOver, onMouseOut)
 
 import Model exposing (..)
 import Message exposing (Message)
 
+import View.Asset as Asset
 import View.HomePage as HomePage
 import View.Mezuzot as Mezuzot
 
@@ -46,7 +47,8 @@ navButton page =
   let 
     label = buttonLabel page
   in
-    div [ class "nav-button" ] [ text label ]
+    a [ href (Asset.link page) ] 
+      [ div [ class "nav-button" ] [ text label ] ]
 
 
 buttonLabel : Page -> String

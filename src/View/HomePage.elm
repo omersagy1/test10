@@ -3,10 +3,10 @@ module View.HomePage exposing (..)
 import Html exposing (Html, div, text, img, a)
 import Html.Attributes exposing (class, href, src, target)
 
-import Asset exposing (imagesrc)
 import Model exposing (..)
 import Message exposing (Message)
 
+import View.Asset as Asset exposing (imagesrc)
 import View.Text as Text
 
 
@@ -63,7 +63,7 @@ mezuzot : Html Message
 mezuzot =
   div [ class "product-category" ]
       [ productTitle "Mezuzot"
-      , a [ href "/mezuzot" ]
+      , a [ href (Asset.link (Product Mezuzot))  ]
           [ div [ class "product-image-frame" ]
                 [ img [ class "product-image", imagesrc "mezuzah_page" ] [] ]
           ]
