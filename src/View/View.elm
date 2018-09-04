@@ -9,6 +9,7 @@ import Model exposing (..)
 import Message exposing (Message)
 
 import View.HomePage as HomePage
+import View.Mezuzot as Mezuzot
 
 
 view : Model -> Document Message
@@ -27,6 +28,8 @@ body model =
   case model.currentPage of
 
     Home -> HomePage.homePage
+
+    Product Mezuzot -> Mezuzot.mezuzotPage
 
     other -> 
       div [] [text "page not implemented!"]
