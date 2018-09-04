@@ -1,7 +1,7 @@
 module View.HomePage exposing (..)
 
-import Html exposing (Html, div, text, img)
-import Html.Attributes exposing (class, src)
+import Html exposing (Html, div, text, img, a)
+import Html.Attributes exposing (class, href, src, target)
 
 import Asset exposing (imagesrc)
 import Model exposing (..)
@@ -63,8 +63,10 @@ mezuzot : Html Message
 mezuzot =
   div [ class "product-category" ]
       [ productTitle "Mezuzot"
-      , div [ class "product-image-frame" ]
-            [ img [ class "product-image", imagesrc "mezuzah_page" ] [] ]
+      , a [ href "/mezuzot" ]
+          [ div [ class "product-image-frame" ]
+                [ img [ class "product-image", imagesrc "mezuzah_page" ] [] ]
+          ]
       ]
 
 
@@ -82,4 +84,6 @@ photoHolders =
 
 productTitle : String -> Html a
 productTitle title =
-  div [ class "product-title" ] [ text title ]
+  a [ href "http://www.google.com", target "_blank" ] 
+    [ div [ class "product-title" ] [ text title ]
+    ]

@@ -1,6 +1,11 @@
 module Message exposing (..)
 
+import Browser exposing (UrlRequest)
+import Url exposing (Url)
+
 import Model exposing (..)
 
 
-type Message = Navigate Page
+type Message = ClickedLink UrlRequest
+               | UrlChanged Url
+               | Navigate Page

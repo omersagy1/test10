@@ -10,6 +10,11 @@
   --title-font: "Cochin";
 }
 
+a {
+  /* Get rid of the underline for hyperlinks. */
+  text-decoration: none;
+}
+
 html, body {
   margin: 0px;
   height: 100%;
