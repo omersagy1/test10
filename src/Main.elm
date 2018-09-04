@@ -45,7 +45,7 @@ init flags url key =
         }
       }
   in
-    (initialModel, Cmd.none)
+    changeUrl url initialModel
 
 
 update : Message -> Model -> (Model, Cmd Message)
@@ -86,11 +86,20 @@ urlChanged url model =
     update (Message.Navigate page) model
 
 
+pathForPage : Page -> String
+pathForPage page =
+  case page of
+    Home -> "home"
+    Product Mezuzot -> "mezuzot"
+    Product Jewelry -> "jewelry"
+    other -> "home"
+
+
 routeParser : Parser (Page -> a) a
 routeParser =
   oneOf
-    [ map Home               (s "home")
-    , map (Product Mezuzot)  (s "mezuzot")
-    , map (Product Mezuzot)  (s "jewelry")
-    ]
-
+    (List.map (\p -> map p (s (pathForPage p)))
+              [ Home
+              , Product Mezuzot
+              , Product Jewelry
+              ])
