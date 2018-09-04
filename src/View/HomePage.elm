@@ -54,8 +54,10 @@ productCategory : String -> String -> Html Message
 productCategory name imgFile =
   div [ class "product-category" ]
       [ productTitle name
-      , div [ class "product-image-frame" ]
-            [ img [ class "product-image", imagesrc imgFile ] [] ]
+      , div [ class "product-image-container" ]
+            [ div [ class "product-image-frame" ]
+                  [ img [ class "product-image", imagesrc imgFile ] [] ]
+            ]
       ]
 
 
@@ -63,9 +65,12 @@ mezuzot : Html Message
 mezuzot =
   div [ class "product-category" ]
       [ productTitle "Mezuzot"
-      , a [ href (Asset.link (Product Mezuzot))  ]
-          [ div [ class "product-image-frame" ]
-                [ img [ class "product-image", imagesrc "mezuzah_page" ] [] ]
+      , div
+          [class "product-image-container" ]
+          [ a [ href (Asset.link (Product Mezuzot))  ]
+              [ div [ class "product-image-frame" ]
+                    [ img [ class "product-image", imagesrc "mezuzah_page" ] [] ]
+              ]
           ]
       ]
 

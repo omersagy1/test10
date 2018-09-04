@@ -125,23 +125,28 @@ html, body {
 
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .product-category {
   margin-right: 50px;
 }
 
+.product-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 335px;
+}
+
 .product-image-frame {
-  box-shadow: 0px 2px 4px #00000080;
+  box-shadow: 0px 1px 2px #00000080;
 }
 
 .product-image-frame:hover {
-  border-style: solid;
-  border-color: var(--highlight-color);
-  border-width: 10px;
-
-  box-shadow: 0px 4px 8px #00000080;
+  box-shadow:
+    0 0 0 10px var(--highlight-color),
+    0px 6px 20px 8px #00000080;
 }
 
 .product-image {
