@@ -10,18 +10,18 @@ import Message exposing (Message)
 import View.Text as Text
 
 
-homePage : HomePage -> Html Message
-homePage pageModel =
+homePage : Html Message
+homePage =
   div [ class "homepage" ] 
-      [ mainBody pageModel.highlightedPhoto ]
+      [ mainBody ]
 
 
-mainBody : Maybe Product -> Html Message
-mainBody highlightedPhoto =
+mainBody : Html Message
+mainBody =
   div [ class "main-body" ]
       [ div [ class "main-title" ] [ text "Gila Sagy Fused Glass Art" ]
       , bio
-      , productCategories highlightedPhoto
+      , productCategories
       ]
 
 
@@ -40,13 +40,13 @@ blurb =
       ]
 
 
-productCategories : Maybe Product -> Html Message
-productCategories highlightedPhoto =
+productCategories : Html Message
+productCategories =
   div [ class "product-categories" ]
-      [ productCategory "Mezuzot" "mezuzah_page"
+      [ mezuzot
       , productCategory "Jewelry" "jewelry_page"
       , productCategory "Flat Wine Bottles" "wine_page"
-      , photoHolders
+      -- , photoHolders
       ]
 
 
@@ -55,8 +55,18 @@ productCategory name imgFile =
   div [ class "product-category" ]
       [ productTitle name
       , div [ class "product-image-frame" ]
-            [ img [ class "category-image", imagesrc imgFile ] [] ]
+            [ img [ class "product-image", imagesrc imgFile ] [] ]
       ]
+
+
+mezuzot : Html Message
+mezuzot =
+  div [ class "product-category" ]
+      [ productTitle "Mezuzot"
+      , div [ class "product-image-frame" ]
+            [ img [ class "product-image", imagesrc "mezuzah_page" ] [] ]
+      ]
+
 
 photoHolders : Html Message
 photoHolders = 

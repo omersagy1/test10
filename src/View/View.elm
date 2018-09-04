@@ -26,8 +26,7 @@ body : Model -> Html Message
 body model =
   case model.currentPage of
 
-    Home -> 
-      HomePage.homePage model.home
+    Home -> HomePage.homePage
 
     other -> 
       div [] [text "page not implemented!"]
@@ -35,28 +34,16 @@ body model =
 
 sideBar : SideBar -> Html Message
 sideBar sb =
-  let
-    highlight : Page -> Bool
-    highlight page =
-      case sb.highlightedPage of
-        Nothing -> False
-        Just p -> page == p
-  in
-    div [ class "sidebar" ] 
-        (List.map2 navButton sb.buttons (List.map highlight sb.buttons))
+  div [ class "sidebar" ] 
+      (List.map navButton sb.buttons)
 
 
-navButton : Page -> Bool -> Html Message
-navButton page highlighted =
+navButton : Page -> Html Message
+navButton page =
   let 
     label = buttonLabel page
-    cls = if highlighted then "nav-button-highlighted" else "nav-button"
   in
-    div [ class cls
-        , onMouseOver (Message.HighlightNavButton page)
-        , onMouseOut Message.ClearNavHighlight
-        ] 
-        [ text label ]
+    div [ class "nav-button" ] [ text label ]
 
 
 buttonLabel : Page -> String

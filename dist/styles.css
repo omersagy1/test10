@@ -53,7 +53,7 @@ html, body {
   box-shadow: 0px 2px 4px #00000080;
 }
 
-.nav-button-highlighted {
+.nav-button:hover {
   background-color: var(--highlight-color);
   color: var(--text-color);
   font-family: var(--base-font);
@@ -123,14 +123,25 @@ html, body {
   margin-right: 50px;
 }
 
-.category-image {
+.product-image-frame {
+  box-shadow: 0px 2px 4px #00000080;
+}
+
+.product-image-frame:hover {
+  border-style: solid;
+  border-color: var(--highlight-color);
+  border-width: 10px;
+
+  box-shadow: 0px 4px 8px #00000080;
+}
+
+.product-image {
+  display: block;
   height: 300px;
 
   border-style: solid;
   border-color: var(--secondary-color);
   border-width: 10px;
-
-  box-shadow: 0px 2px 4px #00000080;
 }
 
 .photo-holders {
