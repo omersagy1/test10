@@ -89,9 +89,13 @@ routeParser =
     oneOf
         (List.map (\p -> map p (s (pathForPage p)))
             [ Home
+            , Etsy
             , Product Mezuzot
             , Product Jewelry
             , Product Bottles
             , Product PhotoHolders
+            , Shows
+            , About
+            , Contact
             ]
         )

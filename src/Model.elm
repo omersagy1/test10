@@ -37,6 +37,9 @@ pathForPage page =
         Home ->
             "home"
 
+        Etsy ->
+            "etsy"
+
         Product Mezuzot ->
             "mezuzot"
 
@@ -49,5 +52,11 @@ pathForPage page =
         Product PhotoHolders ->
             "holders"
 
-        other ->
-            "home"
+        Shows ->
+            "shows"
+
+        About ->
+            "about"
+
+        Contact ->
+            "contact"

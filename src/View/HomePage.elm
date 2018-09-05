@@ -26,8 +26,10 @@ mainBody =
 bio : Html a
 bio =
     div [ class "bio" ]
-        [ div [ class "artist-image-frame" ]
-            [ img [ class "artist-image", imagesrc "artist" ] [] ]
+        [ a [ href (Asset.link About) ]
+            [ div [ class "artist-image-frame" ]
+                [ img [ class "artist-image", imagesrc "artist" ] [] ]
+            ]
         , blurb
         ]
 
