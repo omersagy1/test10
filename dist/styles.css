@@ -122,15 +122,11 @@ html, body {
 
 .product-categories {
   margin-top: 30px;
-  margin-left: 50px;
+  margin-left: 5px;
 
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-}
-
-.product-category {
-  margin-right: 50px;
+  justify-content: space-evenly;
 }
 
 .product-image-container {
