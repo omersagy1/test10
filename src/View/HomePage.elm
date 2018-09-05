@@ -1,11 +1,10 @@
 module View.HomePage exposing (bio, blurb, homePage, mainBody, photoHolders, productCategories, productCategory, productTitle)
 
-import Html exposing (Html, a, div, img, text)
+import Html exposing (Html, a, div, img, span, text)
 import Html.Attributes exposing (class, href, src, target)
 import Message exposing (Message)
 import Model exposing (..)
 import View.Asset as Asset exposing (imagesrc)
-import View.Text as Text
 
 
 homePage : Html Message
@@ -36,7 +35,23 @@ bio =
 
 blurb =
     div [ class "blurb" ]
-        [ text Text.artistBlurb
+        [ artistBlurb ]
+
+
+artistBlurb : Html a
+artistBlurb =
+    span []
+        [ text "One-of-a-kind hand-made glass pieces, from "
+        , a [ href (Asset.link (Product Mezuzot)) ] [ text "Mezuzot" ]
+        , text " to "
+        , a [ href (Asset.link (Product Jewelry)) ] [ text "Necklaces, Earrings," ]
+        , text " and "
+        , a [ href (Asset.link (Product PhotoHolders)) ] [ text "Photo Holders." ]
+        , text " Each piece is carefully crafted by Gila Sagy in her California studio. Please browse, enjoy, and "
+        , a [ href (Asset.link Contact) ] [ text "contact us to place a custom order, " ]
+        , a [ href (Asset.link Etsy) ] [ text "visit our online Etsy store," ]
+        , text " or "
+        , a [ href (Asset.link Shows) ] [ text "stop by in person!" ]
         ]
 
 

@@ -5,12 +5,21 @@
   --highlight-color: rgb(245, 197, 135);
 
   --text-color: rgb(0, 61, 28);
+  --text-link-color: #3a8888;
   --text-highlight-color: rgb(185, 116, 25);
 
   --border-color: #E4E4E4;
   
   --base-font: "Cochin";
   --title-font: "Cochin";
+}
+
+.blurb a {
+  color: var(--text-link-color);
+}
+
+.blurb a:hover {
+  color: var(--text-highlight-color);
 }
 
 a {
@@ -50,7 +59,7 @@ html, body {
   background-color: var(--tertiary-color);
   color: var(--text-color);
   font-family: var(--base-font);
-  width: 140px;
+  width: 150px;
   height: 30px;
   margin: 20px;
 

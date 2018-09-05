@@ -78,7 +78,7 @@ buttonLabel page =
             "Photo Holders"
 
         Shows ->
-            "Shows & Fairs"
+            "Shows & Events"
 
         About ->
             "About Gila"
