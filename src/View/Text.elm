@@ -1,9 +1,9 @@
-module View.Text exposing (..)
+module View.Text exposing (artistBlurb)
 
 
 artistBlurb : String
-artistBlurb = 
-  """
+artistBlurb =
+    """
   One-of-a-kind hand-made glass pieces, from Mezuzot to Necklaces, 
   Earrings, and Photo Holders. Each piece is carefully crafted by 
   Gila Sagy in her California studio. Please browse, enjoy, and 
