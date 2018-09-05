@@ -93,7 +93,7 @@ productTitle product =
                     "Jewelry"
 
                 Bottles ->
-                    "Flattened Wine Bottles"
+                    "Wine Bottle Platters"
 
                 PhotoHolders ->
                     "Photo Holders"

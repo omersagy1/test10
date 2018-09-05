@@ -1,12 +1,13 @@
 module View.View exposing (view)
 
 import Browser exposing (Document)
-import Html exposing (Html, a, div, text)
-import Html.Attributes exposing (class, href)
+import Html exposing (Html, a, div, iframe, text)
+import Html.Attributes exposing (class, href, src)
 import Html.Events exposing (onMouseOut, onMouseOver)
 import Message exposing (Message)
 import Model exposing (..)
 import View.Asset as Asset
+import View.Etsy as Etsy
 import View.HomePage as HomePage
 import View.Mezuzot as Mezuzot
 
@@ -28,6 +29,9 @@ body model =
     case model.currentPage of
         Home ->
             HomePage.homePage
+
+        Etsy ->
+            Etsy.etsyPage
 
         Product Mezuzot ->
             Mezuzot.mezuzotPage
