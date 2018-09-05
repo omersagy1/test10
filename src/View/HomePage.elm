@@ -42,17 +42,16 @@ productCategories : Html Message
 productCategories =
     div [ class "product-categories" ]
         [ mezuzot
-        , productCategory "Jewelry" "jewelry_page"
-        , productCategory "Flat Wine Bottles" "wine_page"
-
-        -- , photoHolders
+        , productCategory Jewelry "jewelry_page"
+        , productCategory Bottles "wine_page"
+        , photoHolders
         ]
 
 
-productCategory : String -> String -> Html Message
-productCategory name imgFile =
+productCategory : Product -> String -> Html Message
+productCategory product imgFile =
     div [ class "product-category" ]
-        [ productTitle name
+        [ productTitle product
         , div [ class "product-image-container" ]
             [ div [ class "product-image-frame" ]
                 [ img [ class "product-image", imagesrc imgFile ] [] ]
@@ -63,7 +62,7 @@ productCategory name imgFile =
 mezuzot : Html Message
 mezuzot =
     div [ class "product-category" ]
-        [ productTitle "Mezuzot"
+        [ productTitle Mezuzot
         , div [ class "product-image-container" ]
             [ a [ href (Asset.link (Product Mezuzot)) ]
                 [ div [ class "product-image-frame" ]
@@ -76,7 +75,7 @@ mezuzot =
 photoHolders : Html Message
 photoHolders =
     div [ class "product-category" ]
-        [ productTitle "Photo Holders"
+        [ productTitle Bottles
         , div [ class "photo-holders-frame" ]
             [ img [ class "photo-holder", imagesrc "holder_page_1" ] []
             , img [ class "photo-holder", imagesrc "holder_page_2" ] []
@@ -85,8 +84,23 @@ photoHolders =
         ]
 
 
-productTitle : String -> Html a
-productTitle title =
-    a [ href "http://www.google.com", target "_blank" ]
+productTitle : Product -> Html a
+productTitle product =
+    let
+        title =
+            case product of
+                Mezuzot ->
+                    "Mezuzot"
+
+                Jewelry ->
+                    "Jewelry"
+
+                Bottles ->
+                    "Flattened Wine Bottles"
+
+                PhotoHolders ->
+                    "Photo Holders"
+    in
+    a [ href (Asset.link (Product product)) ]
         [ div [ class "product-title" ] [ text title ]
         ]
