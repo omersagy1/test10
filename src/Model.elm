@@ -43,5 +43,11 @@ pathForPage page =
         Product Jewelry ->
             "jewelry"
 
+        Product Bottles ->
+            "bottles"
+
+        Product PhotoHolders ->
+            "holders"
+
         other ->
             "home"

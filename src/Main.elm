@@ -91,5 +91,7 @@ routeParser =
             [ Home
             , Product Mezuzot
             , Product Jewelry
+            , Product Bottles
+            , Product PhotoHolders
             ]
         )
