@@ -11,6 +11,8 @@
   --border-color: #E4E4E4;
   
   --base-font: "Cochin";
+  --base-font-size: 1.05em;
+
   --title-font: "Cochin";
 }
 
@@ -30,6 +32,7 @@ a {
 html, body {
   margin: 0px;
   height: 100%;
+  font-size: var(--base-font-size);
 }
 
 .top-level {
@@ -43,7 +46,7 @@ html, body {
 .sidebar {
   flex-grow: 0;
   flex-shrink: 0;
-  flex-basis: 200px;
+  flex-basis: 10em;
 
   background-color: var(--secondary-color);
 
@@ -59,8 +62,8 @@ html, body {
   background-color: var(--tertiary-color);
   color: var(--text-color);
   font-family: var(--base-font);
-  width: 150px;
-  height: 30px;
+  width: 7.5em;
+  height: 1.7em;
 
   display: flex;
   justify-content: center;
@@ -84,7 +87,7 @@ html, body {
 .main-title {
   margin: 20px;
   margin-bottom: 40px;
-  font-size: 60px;
+  font-size: 3.5em;
   font-family: var(--title-font);
   color: var(--text-color);
   text-align: center;
@@ -115,7 +118,6 @@ html, body {
 }
 
 .blurb {
-  font-size: 22px;
   font-family: var(--base-font);
   color: var(--text-color);
 }
