@@ -1,4 +1,4 @@
-module View.HomePage exposing (bio, blurb, homePage, mainBody, photoHolders, productCategories, productCategory, productTitle)
+module View.Home exposing (bio, blurb, homePage, mainBody, photoHolders, productCategories, productCategory, productTitle)
 
 import Html exposing (Html, a, div, img, span, text)
 import Html.Attributes exposing (class, href, src, target)

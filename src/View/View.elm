@@ -1,15 +1,16 @@
 module View.View exposing (view)
 
 import Browser exposing (Document)
-import Html exposing (Html, a, div, iframe, text)
+import Html exposing (Html, a, div, text)
 import Html.Attributes exposing (class, href, src)
 import Html.Events exposing (onMouseOut, onMouseOver)
 import Message exposing (Message)
 import Model exposing (..)
 import View.Asset as Asset
 import View.Etsy as Etsy
-import View.HomePage as HomePage
+import View.Home as Home
 import View.Mezuzot as Mezuzot
+import View.Shows as Shows
 
 
 view : Model -> Document Message
@@ -28,13 +29,16 @@ body : Model -> Html Message
 body model =
     case model.currentPage of
         Home ->
-            HomePage.homePage
+            Home.homePage
 
         Etsy ->
             Etsy.etsyPage
 
         Product Mezuzot ->
             Mezuzot.mezuzotPage
+
+        Shows ->
+            Shows.showsPage
 
         other ->
             div [] [ text "page not implemented!" ]
