@@ -12,6 +12,7 @@
   
   --base-font: "Cochin";
   --base-font-size: 1.05em;
+  --title-font-size: 3.2em;
 
   --title-font: "Cochin";
 
@@ -97,7 +98,7 @@ html, body {
 .main-title {
   margin: 20px;
   margin-bottom: 40px;
-  font-size: 3.5em;
+  font-size: var(--title-font-size);
   font-family: var(--title-font);
   color: var(--text-color);
   text-align: center;
