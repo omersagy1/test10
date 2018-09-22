@@ -12,11 +12,11 @@
   
   --base-font: "Cochin";
   --base-font-size: 1.05em;
-  --title-font-size: 3.2em;
 
   --title-font: "Cochin";
+  --title-font-size: 3.2em;
 
-  --sidebar-right-margin: 3em;
+  --body-side-margin: 3em;
 }
 
 .blurb a {
@@ -47,8 +47,6 @@ html, body {
 }
 
 .sidebar {
-  margin-right: var(--sidebar-right-margin);
-
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: 10em;
@@ -92,7 +90,8 @@ html, body {
 
 .main-body {
   max-width: 60em;
-  margin-right: var(--sidebar-right-margin);
+  margin-left: var(--body-side-margin);
+  margin-right: var(--body-side-margin);
 }
 
 .main-title {
