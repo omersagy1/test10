@@ -19,7 +19,8 @@ view model =
     , body =
         [ div [ class "top-level" ]
             [ sideBar model.sideBar
-            , body model
+            , div [ class "main-title" ] [ text (pageTitle model.currentPage) ]
+            , div [ class "main-body" ] [ body model ]
             ]
         ]
     }
@@ -89,3 +90,16 @@ buttonLabel page =
 
         Contact ->
             "Contact Us"
+
+
+pageTitle : Page -> String
+pageTitle p =
+    case p of
+        Home ->
+            "Gila Sagy Fused Glass Art"
+
+        Shows ->
+            "Shows and Events"
+
+        other ->
+            "Not Implemented"

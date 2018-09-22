@@ -1,4 +1,4 @@
-module View.Home exposing (bio, blurb, homePage, mainBody, photoHolders, productCategories, productCategory, productTitle)
+module View.Home exposing (homePage)
 
 import Html exposing (Html, a, div, img, span, text)
 import Html.Attributes exposing (class, href, src, target)
@@ -10,14 +10,7 @@ import View.Asset as Asset exposing (imagesrc)
 homePage : Html Message
 homePage =
     div [ class "homepage" ]
-        [ mainBody ]
-
-
-mainBody : Html Message
-mainBody =
-    div [ class "main-body" ]
-        [ div [ class "main-title" ] [ text "Gila Sagy Fused Glass Art" ]
-        , bio
+        [ bio
         , productCategories
         ]
 

@@ -42,14 +42,18 @@ html, body {
   height: 100%;
   background-color: var(--base-color);
 
-  display: flex;
-  flex-direction: row;
+  display: grid;
+  grid-template-areas: "sidebar title"
+                       "sidebar main-body";
+  grid-template-rows: 5em 1fr;                       
+  grid-template-columns: 9em 1fr;
+  row-gap: 1em;
 }
 
 .sidebar {
-  flex-grow: 0;
-  flex-shrink: 0;
-  flex-basis: 10em;
+  grid-area: sidebar;
+
+  width: 9em;
 
   background-color: var(--secondary-color);
 
@@ -89,18 +93,20 @@ html, body {
 
 
 .main-body {
+  grid-area: main-body;
+
   max-width: 60em;
   margin-left: var(--body-side-margin);
   margin-right: var(--body-side-margin);
 }
 
 .main-title {
-  margin: 20px;
-  margin-bottom: 40px;
+  text-align: center;
+  padding-top: .3em;
+
   font-size: var(--title-font-size);
   font-family: var(--title-font);
   color: var(--text-color);
-  text-align: center;
 }
 
 .bio {
