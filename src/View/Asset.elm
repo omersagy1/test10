@@ -1,4 +1,4 @@
-module View.Asset exposing (imagesrc, link, title)
+module View.Asset exposing (imagesrc, link)
 
 import Html exposing (Attribute, Html, div, text)
 import Html.Attributes exposing (class, src)
@@ -13,8 +13,3 @@ imagesrc fileName =
 link : Page -> String
 link page =
     "/" ++ pathForPage page
-
-
-title : String -> Html a
-title t =
-    div [ class "main-title" ] [ text t ]

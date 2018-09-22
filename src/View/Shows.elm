@@ -7,9 +7,8 @@ import View.Asset as Asset
 
 showsPage : Html a
 showsPage =
-    div [ class "main-body" ]
-        [ Asset.title "Shows and Events"
-        , div [ class "subtitle" ] [ text "Upcoming" ]
+    div [ class "shows-page" ]
+        [ div [ class "subtitle" ] [ text "Upcoming" ]
         , shows
         ]
 

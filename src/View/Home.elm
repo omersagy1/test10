@@ -9,7 +9,7 @@ import View.Asset as Asset exposing (imagesrc)
 
 homePage : Html Message
 homePage =
-    div [ class "homepage" ]
+    div [ class "home-page" ]
         [ bio
         , productCategories
         ]
