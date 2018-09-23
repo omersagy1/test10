@@ -2,6 +2,7 @@ module Main exposing (changeUrl, clickedLink, init, main, routeParser, update, u
 
 import Browser exposing (UrlRequest)
 import Browser.Navigation as Nav
+import Data
 import Debug
 import Maybe exposing (..)
 import Message exposing (Message)
@@ -42,6 +43,7 @@ init flags url key =
                     , Contact
                     ]
                 }
+            , shows = Data.shows
             }
     in
     changeUrl url initialModel
