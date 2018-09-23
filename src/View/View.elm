@@ -39,7 +39,7 @@ body model =
             Mezuzot.mezuzotPage
 
         Shows ->
-            Shows.showsPage
+            Shows.showsPage model
 
         other ->
             div [] [ text "page not implemented!" ]
