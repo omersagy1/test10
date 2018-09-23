@@ -1,12 +1,14 @@
 module Model exposing (Model, Page(..), Product(..), SideBar, pathForPage)
 
 import Browser.Navigation as Nav
+import Time exposing (Posix)
 
 
 type alias Model =
     { key : Nav.Key
     , currentPage : Page
     , sideBar : SideBar
+    , shows : List Show
     }
 
 
@@ -29,6 +31,14 @@ type Product
     | Jewelry
     | PhotoHolders
     | Bottles
+
+
+type alias Show =
+    { name : String -- Name of the show.
+    , startDate : Posix -- Date the show is beginning.
+    , endDate : Maybe Posix -- Date the show is ending, if the show is multi-day.
+    , boothName : String -- The name of the location within the show, e.g. "Booth #101"
+    }
 
 
 pathForPage : Page -> String
