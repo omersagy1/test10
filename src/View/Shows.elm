@@ -17,13 +17,13 @@ showsPage model =
 
 shows : Model -> Html a
 shows model =
-    div [] (List.map show model.shows)
+    div [ class "shows-list" ] (List.map show model.shows)
 
 
 show : Show -> Html a
 show s =
-    div []
-        [ text s.name
-        , text (Date.format "MMMM ddd, y" s.startDate)
-        , text s.boothName
+    div [ class "shows-list-entry" ]
+        [ div [] [ text s.name ]
+        , div [] [ text (Date.format "MMMM ddd, y" s.startDate) ]
+        , div [] [ text s.boothName ]
         ]
