@@ -1,6 +1,7 @@
 module Model exposing (Model, Page(..), Product(..), Show, SideBar, pathForPage)
 
 import Browser.Navigation as Nav
+import Date exposing (Date)
 import Time exposing (Posix)
 
 
@@ -35,7 +36,7 @@ type Product
 
 type alias Show =
     { name : String -- Name of the show.
-    , date : String -- Date(s) of the show.
+    , startDate : Date -- Start Date of the show.
     , boothName : String -- The name of the location within the show, e.g. "Booth #101"
     }
 

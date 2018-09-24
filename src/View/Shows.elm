@@ -1,5 +1,6 @@
 module View.Shows exposing (showsPage)
 
+import Date
 import Html exposing (Html, div, text)
 import Html.Attributes exposing (class)
 import Model exposing (Model, Show)
@@ -23,6 +24,6 @@ show : Show -> Html a
 show s =
     div []
         [ text s.name
-        , text s.date
+        , text (Date.format "MMMM ddd, y" s.startDate)
         , text s.boothName
         ]
